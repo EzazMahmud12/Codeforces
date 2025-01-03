@@ -1,0 +1,67 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		ll i,j,sum=0;
+		int two=0,three=0;
+
+		string s;
+
+		cin>>s;
+
+		for(i=0; i<s.size(); i++){
+			sum+=s[i]-'0';
+			if(s[i]=='2'){
+				two++;
+			}
+			if(s[i]=='3'){
+				three++;
+			}
+		}
+
+		if(sum%9==0) cout<<"YES"<<endl;
+
+		else{
+			bool ok=false;
+
+			for(i=0; i<=min(100,two); i++){
+				for(j=0; j<=min(100,three); j++){
+					ll val;
+					val=sum+((i*2)+(6*j));
+					if(val%9==0){
+						ok=true;
+						break;
+					}
+				}
+				if(ok){
+					break;
+				}
+			}
+			if(ok) cout<<"YES"<<endl;
+			else cout<<"NO"<<endl;
+		}
+
+	}
+
+
+
+
+		
+}
+
+		
+
+
+
+	     //            S m o t h e r e d  M a t e !!		 //

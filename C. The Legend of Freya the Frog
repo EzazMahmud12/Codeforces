@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		ll x,y,k;
+
+		cin>>x>>y>>k;
+
+		ll ans=0,a,b;
+
+		a=(x+k-1)/k;
+		b=(y+k-1)/k;
+
+		ans=2*max(a,b);
+
+		if(a>b) ans--;
+
+		cout<<ans<<endl;
+
+	}
+
+}
+
+		
+
+
+
+	     //            S m o t h e r e d  M a t e !!		 //

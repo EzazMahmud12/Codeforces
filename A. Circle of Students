@@ -1,0 +1,69 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+int n;
+
+int fun(int a,int b){
+	int dis;
+	dis=(b-a+n)%n;
+	return dis;
+}
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		int i;
+		cin>>n;
+
+		vector<int> v(n);
+
+		for(i=0; i<n; i++){
+			cin>>v[i];
+		}
+
+		if(n==1){
+			cout<<"YES"<<endl;
+		}
+
+		else{
+
+		set<int> st,st2;
+
+		for(i=0; i<n-1; i++){
+			int x;
+			x=fun(v[i],v[i+1]);
+			st.insert(x);
+		}
+
+		for(i=0; i<n-1; i++){
+			int y;
+			y=fun(v[i+1],v[i]);
+			st2.insert(y);
+		}
+
+
+		if(st.size()==1 && *(st.begin())==1 || st2.size()==1 && *(st2.begin())==1){
+			cout<<"YES"<<endl;
+		}
+		else cout<<"NO"<<endl;
+
+	 }
+
+	}
+
+		
+}
+
+		
+
+
+
+	     //            S m o t h e r e d  M a t e !!		 //

@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		ll n,k,i;
+
+		cin>>n>>k;
+
+		vector<ll> v(n);
+
+		for(i=0; i<n; i++) cin>>v[i];
+
+		sort(v.begin(),v.end());
+
+		ll presum=0,c=k;
+
+		for(i=0; i<n; i++){
+			ll val;
+			val=(v[i]*(n-i))+presum;
+			presum+=v[i];
+			
+
+			if(val>=k){
+				break;
+			}
+			c++;
+			
+		}
+
+		cout<<c<<endl;
+
+	}
+		
+}
+
+		
+
+
+
+	     //            S m o t h e r e d  M a t e !!		 //

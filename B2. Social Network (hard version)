@@ -1,0 +1,60 @@
+	#include<bits/stdc++.h>
+	using namespace std;
+	#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+	#define endl '\n'
+	#define ll  long long
+	#define test_case int tc;cin>>tc;while(tc--)
+
+
+	int main() {
+
+
+			e4;
+
+			int i,n,k;
+
+			cin>>n>>k;
+
+			vector<int> v(n);
+
+			for(i=0; i<n; i++) cin>>v[i];
+
+			map<int,int> mp;
+
+			deque<int> dq;
+
+			for(i=0; i<n; i++){
+				if(mp[v[i]]){
+					continue;
+				}
+
+				mp[v[i]]++;
+				dq.push_back(v[i]);
+
+				if(dq.size()>k){
+					int val;
+					val=dq.front();
+					mp[val]=0;
+					dq.pop_front();
+				}
+
+			}
+
+			reverse(dq.begin(),dq.end());
+			cout<<dq.size()<<endl;
+
+			for(auto it:dq) cout<<it<<" ";
+
+			
+			
+
+	}
+
+			
+
+
+
+		     //            S m o t h e r e d  M a t e !!		 //	
+				
+
+ 

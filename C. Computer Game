@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		ll k,n,a,b;
+
+		cin>>k>>n>>a>>b;
+
+		ll lo=0,hi=n,ans=-1,mid;
+
+		while(lo<=hi){
+			mid=(lo+hi)/2;
+
+			ll x,y;
+
+			x=a*mid;
+			y=(n-mid)*b;
+
+			if(x+y<k){
+				ans=mid;
+				lo=mid+1;
+			}
+			else{
+				hi=mid-1;
+			}
+		}
+
+		cout<<ans<<endl;
+
+	}
+		
+}
+
+		
+
+
+
+	     //            S m o t h e r e d  M a t e !!		 //

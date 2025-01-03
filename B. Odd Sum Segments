@@ -1,0 +1,52 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		int i,n,k;
+
+		cin>>n>>k;
+
+		int odd=0;
+
+
+		vector<int> ans;
+
+		for(i=1; i<=n; i++){
+			int a;
+			cin>>a;
+			if(a%2){
+				ans.push_back(i);
+				odd++;
+				
+			}
+		}
+
+		if(odd<k) cout<<"NO"<<endl;
+		else if((odd-k+1)%2==0){
+			cout<<"NO"<<endl;
+		}
+
+		else{
+			cout<<"YES"<<endl;
+			for(i=0; i<k-1; i++) cout<<ans[i]<<" ";
+			cout<<n<<endl;
+		}
+
+	}
+}
+
+		
+
+
+
+	     //            S m o t h e r e d  M a t e !!		 //

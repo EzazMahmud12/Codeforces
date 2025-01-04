@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		ll a,b,c;
+
+		cin>>a>>b>>c;
+
+		ll val;
+
+		val=abs(a-b)+abs(a-c)+abs(b-c);
+
+		if(val<=4) cout<<0<<endl;
+		else cout<<val-4<<endl;
+
+	}
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		ll n,k;
+
+		cin>>n>>k;
+
+		ll val=n/k;
+
+		n-=(val*k);
+
+	    cout<<(val*k)+min(k/2,n)<<endl;
+		//else cout<<(val*k)<<endl;
+
+	}
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

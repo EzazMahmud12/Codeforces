@@ -1,0 +1,58 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		int i,n;
+
+		cin>>n;
+
+		vector<pair<int,int>> v(n);
+
+		for(i=0; i<n; i++){
+			cin>>v[i].first>>v[i].second;
+		}
+
+		sort(v.begin(),v.end());
+
+		
+			bool ok=true;
+		
+			int a=0,b=0;
+
+			string ans="";
+
+			for(i=0; i<n; i++){
+				if(v[i].first>=a && v[i].second>=b){
+					ans+=string((v[i].first-a),'R');
+					ans+=string((v[i].second-b),'U');
+					a=v[i].first;
+					b=v[i].second;
+				}
+				else{
+					ok=false;
+					break;
+				}
+			}
+
+			if(ok)cout<<"YES"<<endl<<ans<<endl;
+		
+			else cout<<"NO"<<endl;
+	}
+
+
+		
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

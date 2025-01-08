@@ -1,0 +1,58 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		int i,n;
+
+		cin>>n;
+
+		map<int,vector<int>> mp;
+
+		for(i=0; i<n; i++){
+			int a;
+			cin>>a;
+
+			mp[a].push_back(i+1);
+		}
+
+		bool ok=false;
+
+		for(auto it:mp){
+			if(it.second.size()>=3){
+				ok=true;
+				break;
+			}
+		}
+
+
+		for(auto it2:mp){
+			vector<int> v=mp[it2.first];
+			if(v.size()>=2){
+				if(v[1]-v[0]>1){
+					ok=true;
+					break;
+				}
+			}
+		}
+
+		if(ok) cout<<"YES"<<endl;
+		else cout<<"NO"<<endl;
+
+	}
+
+		
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

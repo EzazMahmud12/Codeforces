@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		ll i,n;
+
+		cin>>n;
+
+		map<ll,ll> mp;
+
+		for(i=0; i<n; i++){
+			ll a;
+
+			cin>>a;
+			mp[a]++;
+		}
+
+		if(n==1) cout<<0<<endl;
+
+		else{
+
+		ll mx=0;
+
+		for(auto it:mp){
+			mx=max(it.second,mx);
+		}
+
+		ll ans1,ans2,sz;
+
+		sz=mp.size();
+
+		ans1=min(sz-1,mx);
+		ans2=min(sz,mx-1);
+
+		cout<<max(ans1,ans2)<<endl;
+	}
+
+  }
+		
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

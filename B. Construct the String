@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		int n,i,a,b;
+
+		cin>>n>>a>>b;
+
+		string ans="";
+
+		char c='a';
+
+		while(b--){
+			ans+=c;
+			c++;
+		}
+
+		int j=0,sz=ans.size();
+
+		for(i=0; i<n; i++){
+			cout<<ans[j];
+			j++;
+			if(j==sz){
+				j=0;
+			}
+		}
+
+		cout<<endl;
+
+	}
+		
+		
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

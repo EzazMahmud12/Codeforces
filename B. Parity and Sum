@@ -1,0 +1,62 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		ll i,n,mx=0,c=0;
+
+		cin>>n;
+
+		vector<ll> v;
+
+		for(i=0; i<n; i++){
+			ll a;
+
+			cin>>a;
+
+			if(a%2==0){
+				v.push_back(a);
+			}
+			if(a%2){
+				mx=max(mx,a);
+			}
+		}
+
+		if(v.size()==0 || v.size()==n) cout<<0<<endl;
+
+		else{
+
+			sort(v.begin(),v.end());
+
+			for(i=0; i<v.size(); i++){
+				if(v[i]<mx){
+					mx+=v[i];
+					c++;
+				}
+				else{
+					c+=2;
+					mx+=(v.back())*2;
+				}
+			}
+
+			cout<<c<<endl;
+		}
+
+	}
+
+		
+		
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

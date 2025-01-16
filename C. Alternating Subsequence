@@ -1,0 +1,100 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		ll i,n,j;
+
+		cin>>n;
+
+		vector<ll> v(n);
+
+		vector<ll> negative,positive;
+
+		for(i=0; i<n; i++) cin>>v[i];
+
+		set<ll> st;
+
+		for(i=0; i<n; i++){
+			if(v[i]<0){
+				st.insert(v[i]);
+			}
+			if(v[i]>0 && !st.empty()){
+				ll a;
+				a=*(st.rbegin());
+				negative.push_back(a);
+				st.clear();
+			}
+		}
+
+		if(st.size()>0){
+			ll a;
+			a=*(st.rbegin());
+			negative.push_back(a);
+		}
+
+		set<ll> st2;
+
+		for(i=0; i<n; i++){
+			if(v[i]>0){
+				st2.insert(v[i]);
+			}
+			if(v[i]<0 && !st2.empty()){
+				ll b;
+				b=*(st2.rbegin());
+				positive.push_back(b);
+				st2.clear();
+			}
+		}
+
+		if(st2.size()>0){
+			ll b;
+			b=*(st2.rbegin());
+			positive.push_back(b);
+		}
+
+		if(positive.size()==0){
+			cout<<negative[0]<<endl;
+		}
+		else if(negative.size()==0){
+			cout<<positive[0]<<endl;
+		}
+
+		else{
+
+		ll sum=0;
+
+		for(j=0; j<min(positive.size(),negative.size()); j++){
+			sum+=positive[j];
+			sum+=negative[j];
+		}
+		if(negative.size()>positive.size()){
+			sum+=negative[j];
+		}
+		else if(negative.size()<positive.size()){
+			sum+=positive[j];
+		}
+
+		cout<<sum<<endl;
+
+	}
+
+}
+
+		
+		
+		
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

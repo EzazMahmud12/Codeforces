@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+const int mx=2e5+123;
+
+int main() {
+
+
+		e4;
+
+		ll i,n,k,q;
+
+		cin>>n>>k>>q;
+
+		vector<ll> v(mx,0);
+
+		for(i=0; i<n; i++){
+			ll a,b;
+			cin>>a>>b;
+			v[a]++;
+			v[b+1]--;
+		}
+
+		for(i=1; i<=mx; i++){
+			v[i]+=v[i-1];
+		}
+
+		vector<ll> ans;
+
+		for(auto it:v) {
+			if(it>=k){
+				ans.push_back(1);
+			}
+			else{
+				ans.push_back(0);
+			}
+		}
+
+		for(i=1; i<=ans.size(); i++){
+			ans[i]+=ans[i-1];
+		}
+
+		while(q--){
+			ll x,y;
+			cin>>x>>y;
+			cout<<ans[y]-ans[x-1]<<endl;
+		}
+
+		
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

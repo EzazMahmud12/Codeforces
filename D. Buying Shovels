@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		ll n,i,k;
+
+		cin>>n>>k;
+
+		ll mx=0,ans=INT_MAX;
+
+		for(i=1; i*i<=n; i++){
+			if(n%i==0){
+				if(i<=k){
+					mx=max(i,mx);
+					ans=min(ans,n/mx);
+					if(i!=n/i){
+						if(n/i<=k){
+							mx=max(mx,n/i);
+							ans=min(ans,n/mx);
+						}
+					}
+				}
+				else{
+					break;
+				}
+			}
+		}
+
+		cout<<ans<<endl;
+
+	}
+		
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

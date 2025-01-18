@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		
+		ll i,n,k,sum=0;
+
+		cin>>n>>k;
+
+		vector<ll> v(n);
+
+		for(i=0; i<n; i++){
+			cin>>v[i];
+		}		
+
+		for(i=0; i<n; i++){
+			
+			if(v[i]<0){
+				if(k){
+					v[i]=v[i]*-1;
+					k--;
+				}
+			}
+		}
+
+		sort(v.begin(),v.end());
+
+		if(k){
+			while(k--){
+				v[0]=v[0]*(-1);
+			}
+		}
+
+		for(i=0; i<n; i++){
+			sum+=v[i];
+		}
+
+		cout<<sum;
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

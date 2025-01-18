@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		int i,n;
+
+		cin>>n;
+
+		string s;
+
+		cin>>s;
+
+		stack<char> sta;
+
+		int c=0;
+
+		for(i=0; i<n; i++){
+			if(s[i]=='('){
+				sta.push(s[i]);
+			}
+			else{
+				if(!sta.empty()){
+					c++;
+					sta.pop();
+				}
+			}
+		}
+
+		cout<<(n/2)-c<<endl;
+
+	}
+
+
+			
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

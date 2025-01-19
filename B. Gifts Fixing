@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		ll i,n;
+
+		cin>>n;
+
+		vector<ll> v1(n),v2(n);
+
+		ll ans=0,val1=INT_MAX,val2=INT_MAX;
+
+		for(i=0; i<n; i++) {
+			cin>>v1[i];
+			val1=min(val1,v1[i]);
+		}
+		for(i=0; i<n; i++) {
+			cin>>v2[i];
+			val2=min(val2,v2[i]);
+		}
+	
+
+		for(i=0; i<n; i++){
+			ll a,b;
+
+			a=v1[i]-val1;
+			b=v2[i]-val2;
+
+			ans+=min(a,b)+abs(a-b);
+		}
+
+		cout<<ans<<endl;
+
+	}
+
+
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

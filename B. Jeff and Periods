@@ -1,0 +1,67 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		int i,n;
+
+		cin>>n;
+
+		map<int,vector<int>> mp;
+
+		for(i=0; i<n; i++){
+			int a;
+			cin>>a;
+
+			mp[a].push_back(i+1);
+		}
+
+		vector<pair<int,int>> ans;
+
+		for(auto it:mp){
+			vector<int> v=it.second;
+
+			if(v.size()==1){
+				ans.push_back({it.first,0});
+			}
+			else{
+
+				set<int> st;
+				for(i=0; i<v.size()-1; i++){
+					int diff;
+
+					diff=abs(v[i]-v[i+1]);
+					st.insert(diff);
+				}
+				if(st.size()==1){
+					ans.push_back({it.first,(v[1]-v[0])});
+				}
+			}
+		}
+
+		if(ans.empty()){
+			cout<<0;
+		}
+
+		else{
+
+		cout<<ans.size()<<endl;
+
+		sort(ans.begin(),ans.end());
+		for(auto it2:ans){
+			cout<<it2.first<<" "<<it2.second<<endl;
+		}
+
+	}
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

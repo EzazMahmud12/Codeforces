@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		int i,a1,a2,a4,a5;
+
+		cin>>a1>>a2>>a4>>a5;
+
+		int ans=0;
+		for(int a3=-200; a3<=200; a3++){
+			int c=0;
+
+			if (a3==a1+a2) c++;
+            if (a4==a2+a3) c++;
+            if (a5==a3+a4) c++;
+
+            ans=max(ans,c);
+		}
+
+		cout<<ans<<endl;
+
+	}
+
+
+
+
+	
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

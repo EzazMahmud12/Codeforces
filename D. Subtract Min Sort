@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		test_case{
+
+		int i,n;
+
+		cin>>n;
+
+		vector<int> v(n);
+
+		for(i=0; i<n; i++) cin>>v[i];
+
+		
+
+		for(i=0; i<n-1; i++){
+			int mn;
+			mn=min(v[i],v[i+1]);
+			v[i]-=mn;
+			v[i+1]-=mn;
+		}
+
+	
+
+
+		if(is_sorted(v.begin(),v.end())) cout<<"YES"<<endl;
+		else cout<<"NO"<<endl;
+
+	}
+
+
+	
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

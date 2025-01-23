@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		int i;
+
+		string s;
+
+		cin>>s;
+
+		if(s.size()<4){
+			cout<<0;
+			return 0;
+		}
+
+		int c=-1;
+
+		ll ans=0;	
+
+       for(i=0; i<=s.size()-4; i++) {
+        
+        if(s.substr(i, 4)=="bear") {
+            c=i; 
+           
+        }
+    
+        if(c!=-1) {
+           ans+=(c+1);
+
+        	//cout<<c+1<<endl;
+        }
+    }
+
+	  cout<<ans;
+	
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

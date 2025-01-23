@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+		e4;
+
+		int i;
+
+		string s1,s2;
+
+		getline(cin,s1);
+		getline(cin,s2);
+
+		map<char,int> mp;
+
+		for(i=0; i<s1.size(); i++){
+			mp[s1[i]]++;
+		}
+
+		for(i=0; i<s2.size(); i++){
+			if(s2[i]==' '){
+				continue;
+			}
+			if(mp[s2[i]]>0){
+				mp[s2[i]]--;
+			}
+			else{
+				cout<<"NO";
+				return 0;
+			}
+		}
+
+		cout<<"YES";
+
+	
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

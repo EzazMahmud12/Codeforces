@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+			e4;
+
+			int i,n;
+
+			cin>>n;
+
+			map<int,int> mp;
+
+			for(i=0; i<n; i++){
+				int a;
+
+				cin>>a;
+				mp[a]++;
+			}
+
+			for(auto it:mp){
+				if(it.second>(n+1)/2){
+					cout<<"NO";
+					return 0;
+				}
+			}
+
+			
+		 	cout<<"YES";
+			
+			
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

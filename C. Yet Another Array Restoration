@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+			e4;
+
+			test_case{
+
+			int i,n,x,y;
+
+			cin>>n>>x>>y;
+
+			int mx=INT_MAX;
+
+			vector<int> final;
+
+			int d=y-x;
+
+			for(i=1; i<=d; i++){
+				
+
+				for(int j=1; j<=x; j++){
+					vector<int> v;
+					int val=j;
+					while(v.size()<n){
+						v.push_back(val);
+						val+=i;
+					}
+
+					if(binary_search(v.begin(),v.end(),x) && binary_search(v.begin(),v.end(),y)){
+						if(v.back()<mx){
+							mx=v.back();
+							final=v;
+						}
+					}
+				}
+			}
+
+			for(auto it: final) cout<<it<<" ";
+			cout<<endl;
+
+	}
+			
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

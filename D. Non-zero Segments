@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+			e4;
+
+			ll i,n;
+
+			cin>>n;
+
+			vector<ll> v(n+1);
+
+			map<ll,ll> mp;
+
+			mp[0]++;
+
+			ll sum=0,ans=0;
+
+			for(i=0; i<n; i++){
+				ll a;
+				cin>>a;
+
+				sum+=a;
+
+				if(mp[sum]){
+					ans++;
+					mp.clear();
+					mp[0]++;
+					sum=a;
+				}
+				
+				mp[sum]++;
+			}
+
+			cout<<ans;
+
+			
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

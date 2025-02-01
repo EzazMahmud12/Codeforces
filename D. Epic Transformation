@@ -1,0 +1,67 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+			e4;
+
+			test_case{
+
+			ll i,n;
+
+			cin>>n;
+
+			map<ll,ll> mp;
+
+			for(i=0; i<n; i++){
+				ll x;
+				cin>>x;
+
+				mp[x]++;
+			}
+
+			priority_queue<ll> pq;
+
+			for(auto it:mp){
+				pq.push(it.second);
+			}
+
+			while(!pq.empty()){
+
+				if(pq.size()==1){
+					break;
+				}
+				ll a=pq.top();
+				pq.pop();
+
+				ll b=pq.top();
+				pq.pop();
+
+				a--;
+				b--;
+
+				if(a>0) pq.push(a);
+				if(b>0) pq.push(b);
+			}
+
+			ll ans=0;
+
+			while(!pq.empty()){
+				ans+=pq.top();
+				pq.pop();
+			}
+
+			cout<<ans<<endl;
+
+		}
+
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

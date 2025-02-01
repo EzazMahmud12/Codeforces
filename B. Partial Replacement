@@ -1,0 +1,53 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+			e4;
+
+			test_case{
+
+			int i,n,k;
+
+			cin>>n>>k;
+
+			string s;
+
+			cin>>s;
+
+			vector<int> v;
+
+			for(i=0; i<n; i++){
+				if(s[i]=='*'){
+					v.push_back(i);
+				}
+			}
+
+			int last=v[0];
+			int c=1;
+
+			for(i=1; i<v.size(); i++){
+				if(v[i]-last>k){
+					last=v[i-1];
+					c++;
+				}
+			}
+
+			//cout<<last<<" "<<v.back();
+
+			if(last!=v.back()) c++;
+
+			cout<<c<<endl;
+
+		}
+
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

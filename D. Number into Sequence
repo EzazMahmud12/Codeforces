@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+			e4;
+
+			test_case{
+
+			ll i,n;
+
+			cin>>n;
+
+			ll ans,x=n,times=1;
+
+			for(i=2; i*i<=n; i++){
+				ll c=0;
+
+				while(n%i==0){
+					n=n/i;
+					c++;
+				}
+
+				if(c>times){
+					times=c;
+					ans=i;
+				}
+			}
+
+			cout<<times<<endl;
+
+			for(i=1; i<times; i++){
+				cout<<ans<<" ";
+				x/=ans;
+			}
+			cout<<x<<endl;
+
+		}
+
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+			e4;		
+
+			ll y,k,n;
+
+			cin>>y>>k>>n;
+
+			set<ll> ans;
+
+			ll times=n/k,i=1;
+
+			while(times--){
+				ll val=y+(abs(y-(k*i)));
+
+				if(val%k==0 && val<=n){
+					if(abs(y-(k*i))>0)ans.insert(abs(y-(k*i)));
+				}
+				i++;
+			}
+
+			if(ans.size()==0) cout<<-1;
+
+			//cout<<ans.size();
+
+			else for(auto it:ans) cout<<it<<" ";
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+			e4;
+
+			ll i,m,n;
+
+			string s;
+
+			cin>>s;
+
+			n=s.size();
+
+			vector<ll> v(n/2,0);
+
+			cin>>m;
+
+			for(i=0; i<m; i++){
+				ll x;
+				cin>>x;
+				v[x-1]++;
+
+			}
+
+			for(i=1; i<n/2; i++){
+				v[i]+=v[i-1];
+			}
+
+			for(i=0; i<n/2; i++){
+				if(v[i]%2){
+					swap(s[i],s[n-i-1]);
+				}
+			}
+
+			cout<<s;
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

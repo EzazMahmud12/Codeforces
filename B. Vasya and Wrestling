@@ -1,0 +1,73 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+			e4;
+
+			ll i,n;
+
+			cin>>n;
+
+			vector<ll> v;
+
+			vector<ll> first,second;
+
+
+			ll sum1=0,sum2=0;
+
+			for(i=0; i<n; i++){
+				ll a;
+				cin>>a;
+
+				if(a>0){
+					sum1+=a;
+					first.push_back(a);
+				}
+				else{
+					sum2+=abs(a);
+					second.push_back(abs(a));
+				}
+
+				v.push_back(a);
+
+			}
+
+			if(sum1!=sum2){
+				if(sum1>sum2) cout<<"first";
+				else cout<<"second";
+			}
+			else if(sum1==sum2){
+				
+				bool ok=true;
+				for(i=0; i<min(first.size(),second.size()); i++){
+					if(first[i]>second[i]){
+						cout<<"first";
+						ok=false;
+						break;
+					}
+					if(first[i]<second[i]){
+						cout<<"second";
+						ok=false;
+						break;
+					}
+				}
+				if(ok){
+					if(v[n-1]<0) cout<<"second";
+					else cout<<"first";
+				}
+			}
+
+			
+
+		//	cout<<s1<<" "<<s2;
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

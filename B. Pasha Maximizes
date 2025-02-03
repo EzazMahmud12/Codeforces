@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+			e4;	
+
+			int i,j,k;
+
+			string s;
+
+			cin>>s>>k;
+
+			for(i=0; i<s.size() && k>0; i++){
+				char c=s[i];
+				int pos=i;
+				for(j=i+1; j<s.size() && j<=i+k; j++){
+					if(s[j]>c){
+						c=s[j];
+						pos=j;
+					}
+				}
+
+				for(j=pos; j>i; j--){
+					swap(s[j],s[j-1]);
+					k--;
+				}
+			}
+
+			cout<<s;
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	

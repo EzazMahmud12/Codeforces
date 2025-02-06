@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define e4 ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define endl '\n'
+#define ll  long long
+#define test_case int tc;cin>>tc;while(tc--)
+
+
+int main() {
+
+
+			e4;
+
+			ll n,i,k1,k2;
+
+			cin>>n>>k1>>k2;
+
+			vector<ll> v1(n),v2(n);
+
+			for(i=0; i<n; i++) cin>>v1[i];
+
+			for(i=0; i<n; i++) cin>>v2[i];
+
+			priority_queue<ll> pq;
+
+			for(i=0; i<n; i++){
+				pq.push(abs(v1[i]-v2[i]));
+			}
+
+			ll times=k1+k2;
+
+			while(times--){
+				ll x=pq.top();
+				pq.pop();
+				
+				pq.push(abs(x-1));
+			}
+
+			ll ans=0;
+
+			while(!pq.empty()){
+
+				ll val=pq.top();
+				ans+=(val*val);
+				pq.pop();
+			}
+
+			cout<<ans;
+
+
+}
+
+	
+		    //            S m o t h e r e d  M a t e !!		 //	
